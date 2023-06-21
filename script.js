@@ -33,16 +33,22 @@ const pre = document.querySelector('pre');
 const leftContainer = document.querySelector(".left-animation");
 window.addEventListener('DOMContentLoaded', addLeft);
 function addLeft(){
-    leftContainer.style.left = "40px";
+    leftContainer.style.opacity = "1";
 }
 
+//15 anim
+const rightContainer = document.querySelector(".right-animation");
+window.addEventListener('DOMContentLoaded', addRight);
+function addRight(){
+    rightContainer.style.opacity = "1";
+}
 
+// 3 anim
 //codeText.style.opacity = "1";
 // codeText.style.color = "red";
-// 3 anim
+
 
 //4 anim
-
 const blinkBtn = document.querySelector("#blink");
 blinkBtn.addEventListener("click", addBlink);
 function addBlink(){
@@ -385,9 +391,44 @@ function addSvgWave(){
 }
 
 
-//14 anim logo
-//15 anim loader
-//16 anim btn link
-//17 anim left
-//18 anim right
-//19 anim bottom
+
+
+//16 anim
+window.addEventListener("DOMContentLoaded", addMainText);
+function addMainText(){
+    mainText.style.top = "0px";
+}
+
+//17 anim
+const linkToMainPage = document.querySelector('.linkToMainPage');
+window.addEventListener('DOMContentLoaded', addLinkToMainPage);
+function addLinkToMainPage(){
+    linkToMainPage.style.left= '0px';
+}
+
+
+//18, 19, 20 anim
+
+const menu = document.querySelector('.burger-menu');
+  const burger = document.querySelector('#burger');
+  burger.addEventListener('click', handleMenu);
+  
+  function handleMenu() {
+    console.log("hello");
+    menu.classList.toggle('burger-active');
+  }
+
+
+
+  const burgerLinks = document.querySelectorAll(".burger-links")
+  burgerLinks.forEach(link =>{
+    link.addEventListener("mouseover", addLinkAnimation);
+    link.addEventListener("mouseout", removeLinkAnimation);
+  })
+
+  function addLinkAnimation(event){
+    event.target.style.backgroundColor = "aquamarine";
+  }
+  function removeLinkAnimation(event){
+    event.target.style.backgroundColor = "rgba(255,0,0, 0)";
+  }

@@ -8,15 +8,34 @@
 </head>
 <body>
     <nav>
-        <a href="#"><img src="./logo-no-background.png" alt=""></a>
+        <a href="#" class="linkToMainPage"><img src="./logo-no-background.png" alt=""></a>
+        <label class="burger" for="burger">
+            <input type="checkbox" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+          
+          <div class="burger-menu">
+            <a class="burger-links" href="#">My Profile</a>
+            <a class="burger-links"href="#">Assignment</a>
+            <a class="burger-links" href="#">Еще что-то</a>
+          </div>
     </nav>
     <main>
         <h1 class="main-text">Animation</h1>
-            
+
         <div class="left-animation">
             <div class="glass g-1"></div>
             <div class="glass g-2"></div>
             <div class="glass g-3"></div>
+        </div>
+
+        <div class="right-animation">
+            <div class="glass g-7"></div>
+            <div class="glass g-4"></div>
+            <div class="glass g-5"></div>
+            <div class="glass g-6"></div> 
         </div>
 
         <div class="code"><code> <pre>
@@ -37,7 +56,10 @@
         
         
     </main>
+    
+    
     <footer></footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -91,32 +91,123 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: rgb(252, 252, 252);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
 nav {
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
   max-width: 1280px;
+  margin: 0 auto;
   margin-top: 40px;
+}
+nav .linkToMainPage {
+  position: relative;
+  left: -1000px;
+  transition: all 3s;
 }
 nav img {
   width: 150px;
 }
+nav .burger-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  color: black;
+  border-radius: 13px;
+  position: absolute;
+  right: 200px;
+  top: -200px;
+  transition: all 1s;
+}
+nav .burger-menu a {
+  color: #000;
+  padding: 20px;
+  border-radius: 13px;
+  transition: all 1s;
+}
+nav .burger-active {
+  top: 50px;
+  display: flex;
+}
 
 main {
-  margin: 0 auto;
-  max-width: 1280px;
-  margin-top: 80px;
   display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-top: 80px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 main h1 {
-  color: aliceblue;
+  position: relative;
+  top: -1000px;
   font-size: 100px;
   text-align: center;
   color: #FFFFFF;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 55px #ffffff, 0 0 75px #ffffff;
+  transition: all 3s;
 }
 main .code {
+  z-index: 10000;
   opacity: 0;
   width: 700px;
   height: 500px;
@@ -166,12 +257,23 @@ main .animationBtn .btn-active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   top: 450px;
-  left: -1000px;
-  transition: all 1.5s;
+  left: 40px;
+  opacity: 0;
+  transition: all 5s;
+}
+
+.right-animation {
+  position: absolute;
+  opacity: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  top: 450px;
+  right: 0px;
+  transition: all 5s;
 }
 
 .g-1 {
-  background: rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.274);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -203,6 +305,54 @@ main .animationBtn .btn-active {
   border: 1px solid rgba(255, 0, 217, 0.3);
   width: 200px;
   height: 200px;
+  border-radius: 50%;
+}
+
+.g-4 {
+  background: rgba(251, 255, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(251, 255, 0, 0.3);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.g-5 {
+  background: rgba(0, 221, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 221, 255, 0.3);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.g-6 {
+  background: rgba(51, 255, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(51, 255, 0, 0.3);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.g-7 {
+  background: rgba(85, 0, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(85, 0, 255, 0.3);
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
 }
 
@@ -369,6 +519,10 @@ main .animationBtn .btn-active {
     box-shadow: 0 0 20px 0px #ff0051;
   }
 }
+footer {
+  display: block;
+}
+
 .path-0 {
   animation: pathAnim-0 4s;
   animation-timing-function: linear;
